@@ -144,7 +144,7 @@ define(function(require, exports, module) {
                 canUndo: true
             });
 
-            editor.addCommmand(buttonContent, {
+            editor.addCommand(buttonContent, {
                exec: function(editor) {
 
                },
