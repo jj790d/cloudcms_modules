@@ -158,6 +158,12 @@ define(function(require, exports, module) {
                 command: legalContent,
                 toolbar: 'legalContent,1'
             });
+
+            editor.ui.addButton('buttonContent', {
+                label: 'Insert Button',
+                command: legalContent,
+                toolbar: 'buttonContent,1'
+            })
         }
     });
 
