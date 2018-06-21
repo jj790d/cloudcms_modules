@@ -319,7 +319,7 @@ define(function(require, exports, module) {
             lookup: buttonContent,
             onSelect: function(suggestion){
                 console.log(suggestion);
-                $('#result').empty().html(`${suggestion.html}`);
+                $('#result').empty().html(`${suggestion.data.html}`);
             }
         })
     }
