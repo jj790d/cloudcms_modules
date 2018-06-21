@@ -172,7 +172,7 @@ define(function(require, exports, module) {
 
             editor.ui.addButton('buttonContent', {
                 label: 'Insert Button',
-                command: legalContent,
+                command: buttonContent,
                 toolbar: 'buttonContent,1'
             })
         }
