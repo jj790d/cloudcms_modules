@@ -148,6 +148,14 @@ define(function(require, exports, module) {
                exec: function(editor) {
                    $('#buttonInsert').unbind("click");
                    $('#buttonContent').modal('show');
+                   $('#buttonInsert').on('click', function(event) {
+                       event.preventDefault();
+                       var  buttonHTML = $('#result').text();
+                       editor.insertHtml(buttonHTML);
+                       $('#buttonContent').modal('hide');
+                       $('#buttonContent #result').empty();
+                       $('#buttonSearch').val('');
+                   });
                },
                canUndo: true
             });
