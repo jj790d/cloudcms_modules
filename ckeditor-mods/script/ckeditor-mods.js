@@ -146,7 +146,8 @@ define(function(require, exports, module) {
 
             editor.addCommand(buttonContent, {
                exec: function(editor) {
-
+                   $('#buttonInsert').unbind("click");
+                   $('#buttonContent').modal('show');
                },
                canUndo: true
             });
