@@ -264,6 +264,21 @@ define(function(require, exports, module) {
             legalContent = newObject;
             legalInit();
         });
+
+        //load the buttons
+        console.log(domain);
+        $.get('https://wwwsit3.cricketwireless.com/cloudassets/cms/portalSupport/path/Development/Buttons', function (result) {
+            var newObject = [];
+            $.each(result, function(data) {
+                console.log(data);
+                var dataObj = {
+                    "value": this.title, "data":{"html":this.buttonHTML}
+                };
+                newObject.push(dataObj)
+            });
+            buttonContent = newObject;
+            buttonInit();
+        })
     }
 
     function searchInit() {
@@ -288,5 +303,14 @@ define(function(require, exports, module) {
                 }
             }
         });
+    }
+
+    function buttonInit() {
+        $('#buttonSearch').autocomplete({
+            lookup: buttonContent,
+            onSelect: function(suggestion){
+                $('#result').empty().html(suggestion.html);
+            }
+        })
     }
 });
