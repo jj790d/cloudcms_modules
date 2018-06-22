@@ -152,7 +152,7 @@ define(function(require, exports, module) {
                        event.preventDefault();
                        var  buttonHTML = $('#result');
                        console.log(buttonHTML);
-                       editor.insertHtml(buttonHTML);
+                       editor.insertHtml(`<a alt="Link Description" class="${buttonHTML}" href="#">Button Label</a>`);
                        $('#buttonContent').modal('hide');
                        $('#buttonContent #result').empty();
                        $('#buttonSearch').val('');
@@ -319,7 +319,7 @@ define(function(require, exports, module) {
             lookup: buttonContent,
             onSelect: function(suggestion){
                 console.log(suggestion);
-                $('#result').empty().html(`<a alt="Link Description" class="${suggestion.data.html}" href="#">Button Label</a>`);
+                $('#result').empty().html(`<a alt="Link Description" class="${suggestion.data.html}" href="#">${suggestion.data.html}</a>`);
             }
         })
     }
