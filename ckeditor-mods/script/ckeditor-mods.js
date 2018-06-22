@@ -325,7 +325,7 @@ define(function(require, exports, module) {
             onSelect: function(suggestion){
                 console.log(suggestion);
                 console.log(suggestion.data.html);
-                $('#result').empty().html(`<a alt="Link Description" class="${suggestion.data.html}" href="#">${suggestion.data.html}</a>`);
+                $('#result').empty().html(suggestion.data.html);
             }
         })
     }
