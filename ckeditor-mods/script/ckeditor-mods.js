@@ -150,7 +150,7 @@ define(function(require, exports, module) {
                    $('#buttonContent').modal('show');
                    $('#buttonInsert').on('click', function(event) {
                        event.preventDefault();
-                       var  buttonHTML = $('#result').text();
+                       var  buttonHTML = $('#result');
                        console.log(buttonHTML);
                        editor.insertHtml(buttonHTML);
                        $('#buttonContent').modal('hide');
