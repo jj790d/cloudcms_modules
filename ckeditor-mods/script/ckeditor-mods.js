@@ -158,7 +158,7 @@ define(function(require, exports, module) {
                        console.log(`result: ${result}`);
                        console.log(result);
                        // editor.insertHtml(`<a alt="Link Description" class="${buttonHTML}" href="#">Button Label</a>`);
-                       editor.insertHtml(`<a alt="Link Description" class="${buttonText}" href="#">Button</a>`);
+                       editor.insertHtml(buttonHTML);
                        $('#buttonContent').modal('hide');
                        $('#buttonContent #result').empty();
                        $('#buttonSearch').val('');
