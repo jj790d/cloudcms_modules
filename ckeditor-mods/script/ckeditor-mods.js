@@ -150,14 +150,7 @@ define(function(require, exports, module) {
                    $('#buttonContent').modal('show');
                    $('#buttonInsert').on('click', function(event) {
                        event.preventDefault();
-                       var buttonText =  $('#result');
-                       console.log(`Text: ${buttonText}`);
                        var  buttonHTML = $('#result').html();
-                       console.log(buttonHTML);
-                       var result = $('#result');
-                       console.log(`result: ${result}`);
-                       console.log(result);
-                       // editor.insertHtml(`<a alt="Link Description" class="${buttonHTML}" href="#">Button Label</a>`);
                        editor.insertHtml(buttonHTML);
                        $('#buttonContent').modal('hide');
                        $('#buttonContent #result').empty();
@@ -324,8 +317,6 @@ define(function(require, exports, module) {
         $('#buttonSearch').autocomplete({
             lookup: buttonContent,
             onSelect: function(suggestion){
-                console.log(suggestion);
-                console.log(suggestion.data.html);
                 $('#result').empty().html(suggestion.data.html);
             }
         })
