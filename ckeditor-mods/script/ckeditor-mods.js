@@ -150,7 +150,10 @@ define(function(require, exports, module) {
                    $('#buttonContent').modal('show');
                    $('#buttonInsert').on('click', function(event) {
                        event.preventDefault();
+                       var buttonTitle = $('#buttonTitle').text();
+                       console.log(buttonTitle);
                        var  buttonHTML = $('#result').html();
+                       buttonHTML.replace('Label', buttonTitle);
                        editor.insertHtml(buttonHTML);
                        $('#buttonContent').modal('hide');
                        $('#buttonContent #result').empty();
@@ -317,10 +320,6 @@ define(function(require, exports, module) {
         $('#buttonSearch').autocomplete({
             lookup: buttonContent,
             onSelect: function(suggestion){
-                var html = suggestion.data.html;
-                var buttonTitle = $('#buttonTitle').text();
-                console.log(buttonTitle);
-                html.replace('Label', buttonTitle);
                 $('#result').empty().html(suggestion.data.html);
             }
         })
