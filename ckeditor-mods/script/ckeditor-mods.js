@@ -151,7 +151,6 @@ define(function(require, exports, module) {
                    $('#buttonInsert').on('click', function(event) {
                        event.preventDefault();
                        var  buttonHTML = $('#result').html();
-                       buttonHTML.innerHTML('test');
                        editor.insertHtml(buttonHTML);
                        $('#buttonContent').modal('hide');
                        $('#buttonContent #result').empty();
@@ -318,6 +317,10 @@ define(function(require, exports, module) {
         $('#buttonSearch').autocomplete({
             lookup: buttonContent,
             onSelect: function(suggestion){
+                var html = suggestion.data.html;
+                var buttonTitle = $('#buttonTitle').text();
+                console.log(buttonTitle);
+                html.replace('Label', buttonTitle);
                 $('#result').empty().html(suggestion.data.html);
             }
         })
