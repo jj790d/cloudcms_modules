@@ -152,7 +152,7 @@ define(function(require, exports, module) {
                        event.preventDefault();
                        var buttonText =  $('#result');
                        console.log(`Text: ${buttonText}`);
-                       var  buttonHTML = $('#result').innerHTML;
+                       var  buttonHTML = $('#result').html();
                        console.log(buttonHTML);
                        var result = $('#result');
                        console.log(`result: ${result}`);
