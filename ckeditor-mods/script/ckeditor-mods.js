@@ -150,8 +150,12 @@ define(function(require, exports, module) {
                    $('#buttonContent').modal('show');
                    $('#buttonInsert').on('click', function(event) {
                        event.preventDefault();
+                       var buttonText =  $('#result').text();
+                       console.log(`Text: ${buttonText}`);
                        var  buttonHTML = $('#result').innerHTML;
                        console.log(buttonHTML);
+                       var result = $('#result');
+                       console.log(`result: ${result}`);
                        // editor.insertHtml(`<a alt="Link Description" class="${buttonHTML}" href="#">Button Label</a>`);
                        editor.insertHtml(`${buttonHTML}`);
                        $('#buttonContent').modal('hide');
@@ -320,6 +324,7 @@ define(function(require, exports, module) {
             lookup: buttonContent,
             onSelect: function(suggestion){
                 console.log(suggestion);
+                console.log(suggestion.data.html);
                 $('#result').empty().html(`<a alt="Link Description" class="${suggestion.data.html}" href="#">${suggestion.data.html}</a>`);
             }
         })
