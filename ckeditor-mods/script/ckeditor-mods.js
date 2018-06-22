@@ -150,13 +150,13 @@ define(function(require, exports, module) {
                    $('#buttonContent').modal('show');
                    $('#buttonInsert').on('click', function(event) {
                        event.preventDefault();
-                       var buttonTitle = $('#buttonTitle').value;
+                       var buttonTitle = $('#buttonTitle')[0].value;
                        console.log($('#buttonTitle'));
                        console.log("Button TItle: " +buttonTitle);
                        var  buttonHTML = $('#result').html();
                        console.log(buttonHTML);
                        console.log(typeof buttonHTML);
-                       buttonHTML.innerText(buttonTitle);
+                       buttonHTML.replace("Label", buttonTitle);
                        console.log(buttonHTML);
                        editor.insertHtml(buttonHTML);
                        $('#buttonContent').modal('hide');
