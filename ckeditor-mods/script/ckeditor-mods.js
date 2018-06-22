@@ -150,9 +150,10 @@ define(function(require, exports, module) {
                    $('#buttonContent').modal('show');
                    $('#buttonInsert').on('click', function(event) {
                        event.preventDefault();
-                       var  buttonHTML = $('#result');
+                       var  buttonHTML = $('#result').innerHTML;
                        console.log(buttonHTML);
-                       editor.insertHtml(`<a alt="Link Description" class="${buttonHTML}" href="#">Button Label</a>`);
+                       // editor.insertHtml(`<a alt="Link Description" class="${buttonHTML}" href="#">Button Label</a>`);
+                       editor.insertHtml(`${buttonHTML}`);
                        $('#buttonContent').modal('hide');
                        $('#buttonContent #result').empty();
                        $('#buttonSearch').val('');
