@@ -156,7 +156,7 @@ define(function(require, exports, module) {
                        var  buttonHTML = $('#result').html();
                        console.log(buttonHTML);
                        console.log(typeof buttonHTML);
-                       buttonHTML.replace("Label", buttonTitle);
+                       buttonHTML = buttonHTML.replace("Label", buttonTitle);
                        console.log(buttonHTML);
                        editor.insertHtml(buttonHTML);
                        $('#buttonContent').modal('hide');
