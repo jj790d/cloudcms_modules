@@ -150,7 +150,8 @@ define(function(require, exports, module) {
                    $('#buttonContent').modal('show');
                    $('#buttonInsert').on('click', function(event) {
                        event.preventDefault();
-                       var buttonTitle = $('#buttonTitle').text();
+                       var buttonTitle = $('#buttonTitle').val();
+                       console.log($('#buttonTitle'));
                        console.log("Button TItle: " +buttonTitle);
                        var  buttonHTML = $('#result').html();
                        console.log(buttonHTML);
